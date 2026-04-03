@@ -164,6 +164,45 @@
 
 <hr>
 
+<h2>Try It in 10 Minutes</h2>
+
+<p>Before the philosophical debate, here's the practical walkthrough. Every feature below works right now in Cursor 3.</p>
+
+<h3>Open the Agents Window</h3>
+<p><code>Cmd+Shift+P</code> → type "Agents Window" → Enter. A new window opens alongside your IDE. You can keep both open or switch between them. The Agents Window is additive: your IDE stays exactly as it was.</p>
+
+<h3>Run your first parallel agents</h3>
+<p>In the Agents Window, open two agent tabs (click the + icon or <code>Cmd+T</code>). In Tab 1, type a task against one repo. In Tab 2, type a different task (same repo or a different one). Both agents run simultaneously. The sidebar shows their status: running, waiting, completed.</p>
+
+<h3>Try /best-of-n for model comparison</h3>
+<p>Type <code>/best-of-n sonnet, gpt, composer fix the flaky logout test</code>. Cursor creates three worktrees, runs the same prompt across all three models in parallel, and a parent agent compares the outputs. You see all three results in Agent Tabs. Pick the best, or ask the parent agent to merge the strongest parts into one commit.</p>
+
+<h3>Try /worktree for isolated changes</h3>
+<p>Type <code>/worktree refactor the auth middleware</code>. Cursor creates a separate git worktree. The agent works there, leaving your main branch untouched. When you're satisfied, <code>/apply-worktree</code> merges the changes back. Configure project-specific setup (deps, .env files, migrations) in <code>.cursor/worktrees.json</code>.</p>
+
+<h3>Push an agent to the cloud</h3>
+<p>Start an agent locally. Mid-task, click the cloud icon to push it to a cloud VM. Close your laptop. The agent keeps working. Come back later, pull the session back to local, and test the changes on your machine. Session history and working tree travel with it.</p>
+
+<h3>Kick off agents from anywhere</h3>
+<p>Cloud agents aren't limited to the desktop app. Start them from <a href="https://cursor.com/agents">cursor.com/agents</a> on the web, from your phone, from Slack (mention @Cursor), from GitHub (via automations), or from Linear. All sessions appear in your Agents Window sidebar.</p>
+
+<h3>Use Design Mode for visual feedback</h3>
+<p>In the Agents Window, press <code>Cmd+Shift+D</code> to toggle Design Mode. Your integrated browser activates. <code>Shift+drag</code> to select a UI area. <code>Cmd+L</code> to add the selected element to the agent chat. Describe what you want changed. The agent translates your visual feedback into code.</p>
+
+<h3>Use the integrated browser</h3>
+<p>The agent can open, navigate, and interact with local websites directly in the built-in browser. It captures screenshots, reads DOM nodes, and monitors console output. Paste a design mockup and ask the agent to match it. Screenshot a bug and ask the agent to investigate.</p>
+
+<h3>Extend agents with plugins</h3>
+<p>Visit <a href="https://cursor.com/marketplace">cursor.com/marketplace</a>. Install plugins with one click. Agents gain access to Atlassian, Datadog, GitLab, Glean, PlanetScale, and 30+ other tools via MCP. Cloud agents can use these plugins during automated runs triggered by Slack, GitHub, or cron schedules (set up at <a href="https://cursor.com/automations">cursor.com/automations</a>).</p>
+
+<h3>Review agent work</h3>
+<p>When an agent finishes, the Agents Window shows its output: diffs in a PR-style view, screenshots of UI changes, and (for cloud agents) video recordings and live previews of the running app. Stage, commit, and create PRs without leaving the window. Dive into any file the agent touched using the built-in editor with full LSP support (go-to-definition, diagnostics, symbol search).</p>
+
+<h3>Enterprise controls</h3>
+<p>Admins can disable "Made with Cursor" code attribution across the team, restrict secret management to admins only, and get human-readable audit logs with directory group names. Third-party plugin imports default to off for enterprise accounts.</p>
+
+<hr>
+
 <h2>The Developer Tension</h2>
 
 <p>Now we arrive at the conflict that makes Cursor 3 interesting, not as a product but as a thesis about the future.</p>
